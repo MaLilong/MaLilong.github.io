@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-01-24T07:00:26.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>MaLilong</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo+github搭建个人微博</title>
+    <link href="http://yoursite.com/2018/01/24/hexo-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%BE%AE%E5%8D%9A/"/>
+    <id>http://yoursite.com/2018/01/24/hexo-github搭建个人微博/</id>
+    <published>2018-01-24T06:06:32.000Z</published>
+    <updated>2018-01-24T07:00:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="github账户的注册和配置"><a href="#github账户的注册和配置" class="headerlink" title="github账户的注册和配置"></a>github账户的注册和配置</h2><p>创建代码库<br>登陆之后，点击页面右上角的加号，选择New repository：<br><img src="https://raw.githubusercontent.com/MaLilong/img-folder/master/blog-img/hexo%20github/9fe4afa0gw1faljww56v8j20ci0a975c.jpg" alt="Image text"><br>新建代码库<br>进入代码库创建页面：<br>在Repository name下填写yourname.github.io，Description (optional)下填写一些简单的描述（不写也没有关系），如图所示：<br><img src="https://raw.githubusercontent.com/MaLilong/img-folder/master/blog-img/hexo%20github/9fe4afa0gw1faljv7hoqhj20p40fz0vo.jpg" alt="Image text"><br><strong>注意：比如我的github名称是MaLilong ,这里你就填 MaLilong.github.io,如果你的名字是zhangsan，那你就填 zhangsan.github.io</strong><br>代码库设置<br>正确创建之后，你将会看到如下界面：<br><img src="https://raw.githubusercontent.com/MaLilong/img-folder/master/blog-img/hexo%20github/9fe4afa0gw1falk4end8ij20kg0cbtbl.jpg" alt="Image text"></p><p>##安装Hexo<br>在自己认为合适的地方创建一个文件夹，这里我以E：/hexo 为例子讲解，首先在E盘目录下创建Hexo文件夹，并在命令行的窗口进入到该目录<br><img src="https://raw.githubusercontent.com/MaLilong/img-folder/master/blog-img/hexo%20github/9fe4afa0gw1falkb6ao3oj2064032a9x.jpg" alt="Image text"><br>在命令行中输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo --save</span><br></pre></td></tr></table></figure></p><p>然后你会看到命令行窗口刷了一大堆白字，下面我们来看一看Hexo是不是已经安装好了。 在命令行中输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure></p><p>如果你看到了如图文字，则说明已经安装成功了。<br><img src="https://raw.githubusercontent.com/MaLilong/img-folder/master/blog-img/hexo%20github/9fe4afa0gw1falkf052h7j205r06f0su.jpg" alt="Image text"></p><p>##hexo的相关配置<br>初始化Hexo</p><p>接着上面的操作，输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></p><p>之后npm将会自动安装你需要的组件，只需要等待npm操作即可。</p><p>首次体验Hexo</p><p>继续操作，同样是在命令行中，输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></p><p>然后会提示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure></p><p>在浏览器中打开<a href="http://localhost:4000/，你将会看到：" target="_blank" rel="noopener">http://localhost:4000/，你将会看到：</a><br><img src="https://raw.githubusercontent.com/MaLilong/img-folder/master/blog-img/hexo%20github/9fe4afa0gw1falkk5mnsvj211y0lcten.jpg" alt="Image text"><br>到目前为止，Hexo在本地的配置已经全都结束了。</p><p>下面会讲解怎样将Hexo与github page 联系起来</p><p>##怎样将Hexo与github page 联系起来<br>大概分为以下几步</p><p>##配置git个人信息<br>配置Deployment<br>配置Git个人信息<br>如果你之前已经配置好git个人信息，请跳过这一个 步骤，直接来到</p><p>1、设置Git的user name和email：(如果是第一次的话)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"xujun"</span></span><br><span class="line">git config --global user.email <span class="string">"gdutxiaoxu@163.com"</span></span><br><span class="line">``` </span><br><span class="line">2、生成密钥</span><br><span class="line">``` bash</span><br><span class="line"> ssh-keygen -t rsa -C <span class="string">"gdutxiaoxu@163.com"</span></span><br></pre></td></tr></table></figure></p><p>##配置Deployment<br>同样在_config.yml文件中，找到Deployment，然后按照如下修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p><p>比如我的仓库的地址是git@github.com:MaLilong/MaLilong.github.io.git，所以配置如下</p><pre><code class="bash">deploy:  <span class="built_in">type</span>: git  repo: git@github.com:MaLilong/MaLilong.github.io.git  branch: master</code></pre><p>##写博客、发布文章<br>新建一篇博客，执行下面的命令：</p><pre><code class="bash">hexo new post <span class="string">"article title"</span></code></pre><p><img src="https://raw.githubusercontent.com/MaLilong/img-folder/master/blog-img/hexo%20github/9fe4afa0gw1fan5dd0480j20cb04ndg2.jpg" alt="Image text"><br>这时候在我的 电脑的目录下 ~\hexo\source\ _posts 将会看到 article title.md 文件</p><p>用MarDown编辑器打开就可以编辑文章了。文章编辑好之后，运行生成、部署命令：</p><pre><code class="bash">hexo g   // 生成hexo d   // 部署</code></pre><p>当然你也可以执行下面的命令，相当于上面两条命令的效果</p><pre><code class="bash">hexo d -g <span class="comment">#在部署前先生成</span></code></pre><p><img src="https://raw.githubusercontent.com/MaLilong/img-folder/master/blog-img/hexo%20github/9fe4afa0gw1fan5ibq44wj20ew04pwf7.jpg" alt="Image text"><br><strong>踩坑提醒</strong><br>1）注意需要提前安装一个扩展：</p><pre><code class="bash">npm install hexo-deployer-git --save <span class="comment">#在部署前先生成</span></code></pre><p><strong>如果没有执行者行命令，将会提醒</strong></p><pre><code class="bash">deloyer not found:git</code></pre><p>##主题<br>主题请<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">查看</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;github账户的注册和配置&quot;&gt;&lt;a href=&quot;#github账户的注册和配置&quot; class=&quot;headerlink&quot; title=&quot;github账户的注册和配置&quot;&gt;&lt;/a&gt;github账户的注册和配置&lt;/h2&gt;&lt;p&gt;创建代码库&lt;br&gt;登陆之后，点击页面右上角的
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
